@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Landing() {
   const [videoSrc, setVideoSrc] = useState("");
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function Home() {
       </div>
       <div className="mt-4">
         <div className="flex flex-row items-center justify-center">
-          <button className="bg-indigo-500 text-white py-2 px-4 mr-4 rounded">Try FREE Now</button>
+          <Link href={'/dashboard'} className="bg-indigo-500 text-white py-2 px-4 mr-4 rounded">Try FREE Now</Link>
           <button
             className="flex flex-row border border-indigo-500 text-white py-2 px-8 rounded">
             Talk to us
@@ -256,28 +256,42 @@ export default function Home() {
           </div>
 
           <div>
-            <h1>Ready to collect testimonials?</h1>
-            <p>We are loved by Fortune 500 companies, early-stage startups, marketing agencies, real estate agents, freelancers, and many more. Your customers&apos; testimonials are the best social proof you can get! Get started now 👇</p>
-            <ul>
-              <li>✅ No coding skill required.</li>
+            <h1
+              className="text-4xl font-bold text-center mt-16 mb-4"
+            >
+              Ready to collect testimonials?
+            </h1>
+            <p className="text-center text-gray-400 text-xl max-w-2xl mx-auto leading-snug">
+              We are loved by Fortune 500 companies, early-stage startups, marketing agencies, real estate agents, freelancers, and many more. Your customers&apos; testimonials are the best social proof you can get! Get started now 👇
+            </p>
+            <ul className="text-center my-8">
+              <li className="mb-6">✅ No coding skill required.</li>
               <li>✅ Start in under 2 minutes.</li>
             </ul>
-            <button>Get started with FREE credits</button>
-            <button>
-              Talk to us
-              <Image src="/avatar/avatar1.pngg" alt="Phone" width={20} height={20} />
-              <Image src="/avatar/avatar2.png" alt="Phone" width={20} height={20} />
-              <Image src="/avatar/avatar3.png" alt="Phone" width={20} height={20} />
-              <Image src="/avatar/avatar4.png" alt="Phone" width={20} height={20} />
-            </button>
-            <Link href={'/pricing'} className="underline">
-              See our pricing
-            </Link>
+            <div className="flex flex-row items-center justify-center">
+              <button className="bg-indigo-500 text-white py-2 px-4 mr-4 rounded">Try FREE Now</button>
+              <button
+                className="flex flex-row border border-indigo-500 text-white py-2 px-8 rounded">
+                Talk to us
+                <Image className="rounded-full ml-1" src="/avatar/avatar1.png" alt="Phone" width={20} height={20} />
+                <Image className="rounded-full -ml-1" src="/avatar/avatar2.png" alt="Phone" width={20} height={20} />
+                <Image className="rounded-full -ml-1" src="/avatar/avatar3.jpg" alt="Phone" width={20} height={20} />
+                <Image className="rounded-full -ml-1" src="/avatar/avatar4.png" alt="Phone" width={20} height={20} />
+              </button>
+            </div>
+            <div className="flex items-center justify-center mt-2 mb-32">
+              <Link href={'/pricing'} className="underline text-gray-400 font-semibold">
+                See our pricing →
+              </Link>
+            </div>
           </div>
 
           <div id="footer" className="flex flow-row">
             <div>
-              <h3>Testimonial</h3>
+              {/* <h3>Testimonial</h3> */}
+              <p className="p-4 pl-8">
+                <Image src={'logo.svg'} alt="Testimonial" width={150} height={150} />
+              </p>
               <p>The easiest solution to getting text and video testimonials from your customers.</p>
             </div>
 
